@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Create Customer</title>
+    <script>
+        function navigateToConnections() {
+            window.location.href = 'createcustomerconnection.html'; // Adjust the path as necessary
+        }
+    </script>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Create Customer</h1>
+        <form id="create-customer-form">
+            <input type="text" id="customer-name" class="input-field" placeholder="Enter Customer Name" value="Sakshi" required>
+            <input type="email" id="customer-email" class="input-field" placeholder="Enter Customer Email" value="sakshi@gmail.com" required>
+            <input type="text" id="customer-phone" class="input-field" placeholder="Enter Customer Phone" value="9876543210" required>
+            <input type="text" id="address" class="input-field" placeholder="Enter Address" value="Vijayawada" required>
+            <input type="text" id="contact-person" class="input-field" placeholder="Enter Contact Person" value="David" required>
+
+            <div class="checkbox-container">
+                <label for="customer-status">Customer Status:</label>
+                <input type="checkbox" id="customer-status" checked>
+            </div>
+
+            <button type="button" class="create-button" onclick="navigateToConnections()">Next: Customer Connections</button>
+        </form>
+    </div>
+</body>
+</html>

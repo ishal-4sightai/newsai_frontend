@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Developer Console</h2>
+        <a href="customers.html">Customer Management</a>
+        <a href="service_management.html">Service Management</a>
+        <a href="errorlog.html">Error Log Management</a>
+        <a href="errormaster.html">Error Master Management</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Overview Heading -->
+        <h1>Dashboard Overview</h1>
+
+        <!-- Overview section with statistics -->
+        <div class="overview">
+            <div>
+                <h3>Active Customers</h3>
+                <p>120</p>
+            </div>
+            <div>
+                <h3>Total Services</h3>
+                <p>45</p>
+            </div>
+            <div>
+                <h3>Recent Errors</h3>
+                <p>5</p>
+            </div>
+        </div>
+
+        <!-- <div class="overview-box">
+            <h2 class="section-title">Recent Errors</h2>
+            <ul>
+                <li>Error 101: Service Timeout</li>
+                <li>Error 203: Database Connection Lost</li>
+                <li>Error 305: Permission Denied</li>
+                <li>Error 400: Invalid Request Format</li>
+                <li>Error 503: Service Unavailable</li>
+            </ul>
+        </div> -->
+
+        <!-- Graphs Section -->
+        <div class="overview-box">
+            <h2 class="section-title">Graphs</h2>
+
+            <div class="graphs">
+                <!-- Time vs Errors Graph -->
+                <div>
+                    <h3>Time vs Errors</h3>
+                    <canvas id="timeVsErrorsGraph"></canvas>
+                </div>
+
+                <!-- Customer vs Errors Graph -->
+                <div>
+                    <h3>Customers vs Errors</h3>
+                    <canvas id="customerVsErrorsGraph"></canvas>
+                </div>
+
+                <!-- Service vs Customers Graph -->
+                <div>
+                    <h3>Service vs Customers</h3>
+                    <canvas id="serviceVsCustomerGraph"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Developer Dashboard. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Time vs Errors Graph
+        var timeVsErrorsCtx = document.getElementById('timeVsErrorsGraph').getContext('2d');
+        var timeVsErrorsGraph = new Chart(timeVsErrorsCtx, {
+            type: 'line',
+            data: {
+                labels: ['10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM'],
+                datasets: [{
+                    label: 'Errors',
+                    data: [5, 3, 4, 6, 2],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Customers vs Errors Graph
+        var customerVsErrorsCtx = document.getElementById('customerVsErrorsGraph').getContext('2d');
+        var customerVsErrorsGraph = new Chart(customerVsErrorsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Customer 1', 'Customer 2', 'Customer 3', 'Customer 4', 'Customer 5'],
+                datasets: [{
+                    label: 'Errors',
+                    data: [3, 1, 4, 2, 5],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Service vs Customers Graph (Bar chart instead of pie)
+        var serviceVsCustomerCtx = document.getElementById('serviceVsCustomerGraph').getContext('2d');
+        var serviceVsCustomerGraph = new Chart(serviceVsCustomerCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Service A', 'Service B', 'Service C', 'Service D', 'Service E'],
+                datasets: [{
+                    label: 'Customers',
+                    data: [15, 30, 20, 25, 10],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

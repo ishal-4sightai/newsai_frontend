@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Error Master</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Create Error Master</h1>
+        <form action="submit_error_master.php" method="POST">
+            <div class="form-group">
+                <input type="text" id="appCode" name="appCode" class="input-field" placeholder="Enter App Code" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="errorNumber" name="errorNumber" class="input-field" placeholder="Enter Error Number" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="errorType" name="errorType" class="input-field" placeholder="Enter Error Type" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="errorCategory" name="errorCategory" class="input-field" placeholder="Enter Error Category" required>
+            </div>
+            <div class="form-group">
+                <select id="log" name="log" class="input-field" required>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" id="businessArea" name="businessArea" class="input-field" placeholder="Enter Business Area" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="tool" name="tool" class="input-field" placeholder="Enter Tool" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="technicalArea" name="technicalArea" class="input-field" placeholder="Enter Technical Area" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="partnerSystem" name="partnerSystem" class="input-field" placeholder="Enter Partner System">
+            </div>
+            <div class="form-group">
+                <input type="text" id="thirdParty" name="thirdParty" class="input-field" placeholder="Enter Third Party">
+            </div>
+            <div class="form-group">
+                <textarea id="devMessage" name="devMessage" class="input-field" placeholder="Enter Dev Message" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="url" id="helpLink" name="helpLink" class="input-field" placeholder="Enter Help Link" required>
+            </div>
+            <div class="form-group">
+                <input type="url" id="videoLink" name="videoLink" class="input-field" placeholder="Enter Video Link">
+            </div>
+            <div class="form-group">
+                <input type="text" id="partnerSystem2" name="partnerSystem2" class="input-field" placeholder="Enter Partner System 2">
+            </div>
+            <button type="submit" class="create-button">Create Error</button>
+            <a href="errormaster.html" class="cancel-button">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your existing stylesheet -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Profile Settings</h2>
+            <a href="update_profile.html"><i class="fas fa-user-edit"></i> Update Profile</a>
+            <a href="update_subscription.html"><i class="fas fa-credit-card"></i> Update Subscription</a>
+            <a href="unique_key_settings.html"><i class="fas fa-key"></i> Unique Key Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Current Profile</h1>
+
+        <!-- Overview Section -->
+        <div class="overview">
+            <div class="profile-details">
+                <div>
+                    <strong>Name:</strong>
+                    <p id="profile-name">John Doe</p>
+                </div>
+                <div>
+                    <strong>Email:</strong>
+                    <p id="profile-email">john.doe@example.com</p>
+                </div>
+                <div>
+                    <strong>Phone Number:</strong>
+                    <p id="profile-phone">+1 234 567 8900</p>
+                </div>
+                <div>
+                    <strong>Subscription Type:</strong>
+                    <p id="subscription-type">Premium</p>
+                </div>
+                <div>
+                    <strong>Subscription Status:</strong>
+                    <p id="subscription-status">Active</p>
+                </div>
+                <div>
+                    <strong>Renewal Date:</strong>
+                    <p id="renewal-date">December 31, 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for settings content -->
+        <div id="settingsContent">
+            <p>Select a setting from the sidebar to update.</p>
+        </div>
+    </div>
+
+</body>
+</html>

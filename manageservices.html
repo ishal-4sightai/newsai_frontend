@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+            <a href="customerdashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profilesettings.html"><i class="fas fa-user-cog"></i> Profile Settings</a>
+            <a href="manageusers.html"><i class="fas fa-users"></i> Manage Users</a>
+            <a href="tokenhistory.html"><i class="fas fa-history"></i> Token History</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Service Management</h1>
+        <a href="C:\Users\infin\OneDrive\Desktop\Developer\create_service.html" class="create-button">+ Create Service</a>
+
+        <div class="overview-box">
+            <h3>Service List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Service Type</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Summarization</td>
+                        <td>Text summarization using advanced algorithms</td>
+                        <td>AI-based</td>
+                        <td>Active</td>
+                        <td>2024-09-09</td>
+                        <td>2024-09-23</td>
+                        <td>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\view_service.html" class="action-button">View Details</a>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button" onclick="confirmDelete('Summarization')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Create Avatar</td>
+                        <td>Generate avatars using user input or AI-generated images</td>
+                        <td>Design</td>
+                        <td>Active</td>
+                        <td>2024-08-15</td>
+                        <td>2024-09-20</td>
+                        <td>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\view_service.html" class="action-button">View Details</a>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button" onclick="confirmDelete('Create Avatar')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Cleaning</td>
+                        <td>Automated cleaning and preprocessing of datasets</td>
+                        <td>Data Processing</td>
+                        <td>Inactive</td>
+                        <td>2024-08-01</td>
+                        <td>2024-08-10</td>
+                        <td>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\view_service.html" class="action-button">View Details</a>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button" onclick="confirmDelete('Data Cleaning')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Translation</td>
+                        <td>Real-time translation services for multiple languages</td>
+                        <td>AI-based</td>
+                        <td>Active</td>
+                        <td>2024-07-10</td>
+                        <td>2024-08-15</td>
+                        <td>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\view_service.html" class="action-button">View Details</a>
+                            <a href="C:\Users\infin\OneDrive\Desktop\Developer\update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button" onclick="confirmDelete('Translation')">Delete</a>
+                        </td>
+                    </tr>
+                    <!-- Add more service rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommended-services">
+            <h3>Recommended Services</h3>
+            <div class="service-cards">
+                <div class="service-card">
+                    <i class="fas fa-spell-check service-icon"></i>
+                    <p>Text Analysis</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-microphone service-icon"></i>
+                    <p>Voice Recognition</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-image service-icon"></i>
+                    <p>Image Recognition</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-smile service-icon"></i>
+                    <p>Sentiment Analysis</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-bar service-icon"></i>
+                    <p>Data Visualization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete(serviceName) {
+            if (confirm("Are you sure you want to delete " + serviceName + "?")) {
+                // Add your delete logic here, e.g., making an API call or redirecting to a delete page.
+                alert(serviceName + " has been deleted."); // Placeholder for delete action
+            }
+        }
+    </script>
+
+    <style>
+        /* General styles */
+        .recommended-services {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 150px;
+            background-color: #f9f9f9;
+        }
+        .service-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+    </style>
+
+</body>
+</html>

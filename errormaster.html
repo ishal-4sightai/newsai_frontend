@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Master Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to filter and search error logs
+        function filterLogs() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const tableRows = document.querySelectorAll('#errorMasterTable tbody tr');
+
+            tableRows.forEach(row => {
+                const appCode = row.cells[0].textContent.toLowerCase();
+                const errorNumber = row.cells[1].textContent.toLowerCase();
+
+                // Show row if it matches search, hide otherwise
+                if (appCode.includes(searchInput) || errorNumber.includes(searchInput)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Error Master Management</h1>
+        <a href="create_error_master.html" class="create-button">Create Error</a>
+
+        <div class="filter-section">
+            <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterLogs()">
+        </div>
+
+        <div class="overview-box">
+            <h3>Error Master List</h3>
+            <table id="errorMasterTable">
+                <thead>
+                    <tr>
+                        <th>App Code</th>
+                        <th>Error Number</th>
+                        <th>Error Type</th>
+                        <th>Error Category</th>
+                        <th>Log</th>
+                        <th>Business Area</th>
+                        <th>Tool</th>
+                        <th>Technical Area</th>
+                        <th>Partner System</th>
+                        <th>Third Party</th>
+                        <th>Dev Message</th>
+                        <th>Help Link</th>
+                        <th>Video Link</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AUTH_APP</td>
+                        <td>EMAIL_ALREADY_REGISTERED</td>
+                        <td>Validation</td>
+                        <td>User Registration</td>
+                        <td>Yes</td>
+                        <td>User Management</td>
+                        <td>API</td>
+                        <td>User Service</td>
+                        <td></td>
+                        <td></td>
+                        <td>User attempted to register with an existing email.</td>
+                        <td><a href="http://example.com/help/email-registration" target="_blank">Help Link</a></td>
+                        <td><a href="http://example.com/help/email-registration" target="_blank">Video Link</a></td>
+                        <td>
+                            <a href="update_error_master.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <!-- Add more error master rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

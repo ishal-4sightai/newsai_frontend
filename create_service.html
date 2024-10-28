@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to navigate to the service management page
+        function navigateToServiceManagement() {
+            window.location.href = 'service_management.html'; // Adjust the path as necessary
+        }
+        
+        // Prevent form submission and navigate to the service management page
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Here, you can perform your AJAX request to submit the form data
+            // For demonstration, we just log the action and navigate
+            console.log("Service created! Navigating to service management...");
+            navigateToServiceManagement();
+        }
+    </script>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Create Service</h1>
+        <form method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <input type="text" id="serviceName" class="input-field" placeholder="Enter Service Name" required>
+            </div>
+            <div class="form-group">
+                <textarea id="serviceDescription" class="input-field" placeholder="Enter Service Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="number" id="servicePrice" class="input-field" placeholder="Enter Service Price" required>
+            </div>
+            <div class="form-group">
+                <label for="isActive">Is Active:</label>
+                <select id="isActive" class="input-field" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="create-button">Create Service</button>
+                <a href="service_management.html" class="cancel-button">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

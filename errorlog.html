@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Log Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to filter and search error logs
+        function filterLogs() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filterSelect = document.getElementById('filterSelect').value;
+            const tableRows = document.querySelectorAll('#errorLogTable tbody tr');
+
+            tableRows.forEach(row => {
+                const errorID = row.cells[0].textContent.toLowerCase();
+                const userID = row.cells[1].textContent.toLowerCase();
+
+                const matchesSearch = errorID.includes(searchInput) || userID.includes(searchInput);
+                const matchesFilter = filterSelect === "" || userID === filterSelect;
+
+                // Show row if it matches search and filter, hide otherwise
+                if (matchesSearch && matchesFilter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Error Log Management</h1>
+
+        <div class="filter-section">
+            <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterLogs()">
+            <select id="filterSelect" onchange="filterLogs()">
+                <option value="">Filter by User</option>
+                <option value="null">No User</option>
+                <option value="user1">User 1</option>
+                <option value="user2">User 2</option>
+                <!-- Add more user options as needed -->
+            </select>
+        </div>
+
+        <div class="overview-box">
+            <h3>Error Log List</h3>
+            <table id="errorLogTable">
+                <thead>
+                    <tr>
+                        <th>Error ID</th>
+                        <th>User ID</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Parameters</th>
+                        <th>Error Message</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CUSTOMER_SERVICE_NOT_FOUND</td>
+                        <td>null</td>
+                        <td>2024-09-25</td>
+                        <td><a href="http://127.0.0.1:8000/api/customer_services/66f3b1cdb076eb0a9563a50b" target="_blank">View Location</a></td>
+                        <td>
+                            <ul>
+                                <li>connection_id: 66f3b1cdb076eb0a9563a50b</li>
+                                <li>path: /api/customer_services/66f3b1cdb076eb0a9563a50b</li>
+                                <li>method: GET</li>
+                                <li>client_ip: 127.0.0.1</li>
+                            </ul>
+                        </td>
+                        <td>customerService Not found</td>
+                        <td>
+                            <a href="update_error_log.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <!-- Add more error log rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

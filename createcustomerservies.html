@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Customer Services</title>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Select Services for Customer</h1>
+        <form id="customer-services-form">
+            <h2>Available Services</h2>
+
+            <div class="service">
+                <p><strong>Service Name:</strong> Clean Text</p>
+                <p><strong>Description:</strong> Clean the given text</p>
+                <input type="checkbox" id="service-clean-text" name="service" value="cleantext">
+            </div>
+
+            <div class="service">
+                <p><strong>Service Name:</strong> Analyze Text</p>
+                <p><strong>Description:</strong> Analyze the given text for sentiment</p>
+                <input type="checkbox" id="service-analyze-text" name="service" value="analyzetext">
+            </div>
+
+            <div class="service">
+                <p><strong>Service Name:</strong> Summarize Text</p>
+                <p><strong>Description:</strong> Summarize the given text content</p>
+                <input type="checkbox" id="service-summarize-text" name="service" value="summarizetext">
+            </div>
+
+            <button type="button" class="create-button" onclick="location.href='customers.html'">Finish: Create Customer</button>
+        </form>
+    </div>
+</body>
+</html>

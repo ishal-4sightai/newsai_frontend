@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function filterServices() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const isActiveFilter = document.getElementById('isActiveFilter').value;
+            const tableRows = document.querySelectorAll('tbody tr');
+
+            tableRows.forEach(row => {
+                const serviceName = row.cells[0].textContent.toLowerCase();
+                const isActive = row.cells[3].textContent;
+
+                const matchesSearch = serviceName.includes(searchInput);
+                const matchesFilter = isActiveFilter === 'all' || (isActiveFilter === 'yes' && isActive === 'Yes') || (isActiveFilter === 'no' && isActive === 'No');
+
+                if (matchesSearch && matchesFilter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Service Management</h1>
+        <a href="create_service.html" class="create-button">Create Service</a>
+
+        <div class="filter-section">
+            <input type="text" id="searchInput" placeholder="Search by Service Name..." onkeyup="filterServices()">
+            <select id="isActiveFilter" onchange="filterServices()">
+                <option value="all">All Services</option>
+                <option value="yes">Active Services</option>
+                <option value="no">Inactive Services</option>
+            </select>
+        </div>
+
+        <div class="overview-box">
+            <h3>Service List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Service Description</th>
+                        <th>Service Price</th>
+                        <th>Is Active</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clean Text</td>
+                        <td>Clean the given text</td>
+                        <td>540</td>
+                        <td>Yes</td>
+                        <td>2024-09-09</td>
+                        <td>2024-09-09</td>
+                        <td>
+                            <a href="update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup</td>
+                        <td>Backup the existing data</td>
+                        <td>750</td>
+                        <td>Yes</td>
+                        <td>2024-09-10</td>
+                        <td>2024-09-10</td>
+                        <td>
+                            <a href="update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Analysis</td>
+                        <td>Analyze the provided text data</td>
+                        <td>600</td>
+                        <td>No</td>
+                        <td>2024-09-11</td>
+                        <td>2024-09-11</td>
+                        <td>
+                            <a href="update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Processing</td>
+                        <td>Process and enhance images</td>
+                        <td>850</td>
+                        <td>Yes</td>
+                        <td>2024-09-12</td>
+                        <td>2024-09-12</td>
+                        <td>
+                            <a href="update_service.html" class="update-button">Update</a>
+                            <a href="#" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    <!-- Add more service rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

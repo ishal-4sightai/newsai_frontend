@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Customer Connections</title>
+    <script>
+        function navigateToservices() {
+            window.location.href = 'createcustomerservies.html'; // Adjust the path as necessary
+        }
+    </script>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Customer Connections</h1>
+        <form id="customer-connections-form">
+            <input type="text" id="external-service-name" class="input-field" placeholder="Enter Service Name" value="Antropic" required>
+            <input type="text" id="unique-credentials-id" class="input-field" placeholder="Enter Credentials ID" value="dfr57ikj" required>
+            <input type="text" id="plan" class="input-field" placeholder="Enter Plan" value="pro" required>
+            <input type="datetime-local" id="start-date" class="input-field" value="2024-09-12T09:27:13" required>
+            <input type="datetime-local" id="end-date" class="input-field" value="2024-09-12T09:27:13" required>
+            <input type="text" id="subscription-status" class="input-field" placeholder="Enter Status" value="pending" required>
+            
+            <div class="checkbox-container">
+                <label for="connection-status">Connection Status:</label>
+                <input type="checkbox" id="connection-status" checked>
+            </div>
+
+            <button type="button" class="create-button" onclick="navigateToservices()">Next: Customer services</button>
+        </form>
+    </div>
+</body>
+</html>
